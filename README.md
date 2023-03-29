@@ -1,10 +1,10 @@
 #CV_Steering
-- Why ?
-Well, purely out of curiosity and interest to make something 
+- Why ?</br>
+Well, purely out of curiosity and interest to make something</br></br>  
 
-- What ?
-Control your racing game using gestures
+- What ?</br> 
+Control your racing game using gestures</br> </br> 
 
-- How ?
-We use OpenCV hand modules to track your hand landmarks. The landmark positions are then mapped to particular controls
+- How ?</br> 
+We use OpenCV hand modules to track your hand landmarks. The landmark positions are then mapped to particular controls</br> 
 
