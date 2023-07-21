@@ -11,3 +11,4 @@ We use OpenCV hand modules to track your hand landmarks. The landmark positions 
 
 
 ##### still under development
+#Update 21-07-2023: Time to revive this 
