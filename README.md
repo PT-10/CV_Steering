@@ -35,6 +35,9 @@ The folder consists of three files, hands.py, functions.py, directkeys.py
 #### directkeys.py
 * Contains the functions to map gestures with key presses.
 
+#### updated.py
+* Copy of functions.py with certain improvements
+
 ### Configuring Steering Sensitivity
 * Adjust the steering sensitivity by modifying the f(angle) function in directkeys.py
   ```
@@ -42,7 +45,7 @@ The folder consists of three files, hands.py, functions.py, directkeys.py
     duration = coefficient*abs(angle)
     return duration
   ```
-* Original coefficient = 0.0015
+* Original coefficient = 0.002
 * Increasing the value increases steering sensitivity.
 
 ## Unlock gesture steering
@@ -61,9 +64,14 @@ The car will maintain its direction when your hands are horizontal. To turn the 
 
 ### Acceleration and Brake
 Acceleration and brake actions are analogous to pressing a button. To accelerate, touch your right thumb tip against your index finger's pip (the upper joint). To disengage acceleration, move your thumb away while keeping your hand in a thumbs-up position. For braking, use the same gestures with your left hand.
-![image](https://github.com/PT-10/CV_Steering/assets/102211549/405f03d1-a6c9-4614-b808-9b8cad8217c0)
 
 
 ### Under development
 * Update 21-07-2023: Time to revive this
 * Update 23-07-2023: Revived, usable irl but still rough, supported only on Windows
+
+### Future improvements:
+* Improve landmark detection confidence and reliability, better physics for steering
+* Map to controller analog stick instead of keyboard keys
+* Replace brake with nitro and implement aircraft lever method for brake
+* Use mediapipe gestures instead of handlandmarks
