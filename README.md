@@ -25,7 +25,7 @@ To set up a local copy up and running follow these steps.
 ## Project Overview
 This project enables you to control your game using gesture steering.
 ### Repository Structure
-The folder consists of three files, hands.py, functions.py, directkeys.py
+The folder consists of four files, hands.py, functions.py, directkeys.py
 #### hands.py
 * Main python file, consists of the hand tracking module and execution of functions.
 
@@ -71,7 +71,7 @@ Acceleration and brake actions are analogous to pressing a button. To accelerate
 * Update 23-07-2023: Revived, usable irl but still rough, supported only on Windows
 
 ### Future improvements:
-* Improve landmark detection confidence and reliability, better physics for steering
-* Map to controller analog stick instead of keyboard keys
-* Replace brake with nitro and implement aircraft lever method for brake
-* Use mediapipe gestures instead of handlandmarks
+- [ ] Improve landmark detection confidence and reliability, better physics for steering
+- [ ] Map to controller analog stick instead of keyboard keys
+- [ ] Replace brake with nitro and implement aircraft lever method for brake
+- [ ] Use mediapipe gestures instead of handlandmarks
