@@ -63,7 +63,7 @@ def ReleaseKey(hexKeyCode):
     ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
 def f(angle):
-    duration = 0.0015*abs(angle)
+    duration = 0.002*abs(angle)
     return duration
 
 def SensitivePressKey(hexKeyCode, angle):

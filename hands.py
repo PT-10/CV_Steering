@@ -2,7 +2,7 @@ import mediapipe as mp
 import cv2
 import numpy as np
 from directkeys import W, A, S, D, PressKey, ReleaseKey
-from functions import get_label, calculate_steering_angle, speed_control, steer, acceleration, brake
+from updated import get_label, calculate_steering_angle, speed_control, steer, acceleration, brake
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
