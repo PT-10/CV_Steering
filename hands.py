@@ -2,7 +2,7 @@ import mediapipe as mp
 import cv2
 import numpy as np
 from directkeys import W, A, S, D, PressKey, ReleaseKey
-from updated import get_label, calculate_steering_angle, speed_control, steer, acceleration, brake
+from updatedgame import get_label, calculate_steering_angle, speed_control, steer, acceleration, brake, hands_are_open
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 
@@ -128,8 +128,16 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.5, m
                             brk_angle = calculate_steering_angle(ltx,lty,lpx,lpy)
                             rev = brake(ld1,ld2, brk)
                             
+                            hands_flag = hands_are_open(ld1,ld2,rd1,rd2)
 
-                            angle = calculate_steering_angle(x1,y1,x2,y2)
+                            if hands_flag == True:
+                                ReleaseKey(W)
+                                ReleaseKey(A)
+                                ReleaseKey(S)
+                                ReleaseKey(D) 
+                                angle = 0
+                            else:
+                                angle = calculate_steering_angle(x1,y1,x2,y2)
                             steer(angle)
                             speed_control(rpm, rev)
                             

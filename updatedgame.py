@@ -1,5 +1,6 @@
 import numpy as np
 import mediapipe as mp
+from gamepad import move_left_stick, move_right_stick, accelerate, x_brake, neutral
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 from directkeys import W, A, S, D, PressKey, ReleaseKey, SensitivePressKey
@@ -37,13 +38,12 @@ def calculate_steering_angle(x1,y1,x2,y2):
 
 def orientation(angle):
 
-    if 10<=angle<=120:
+    if 5<=angle<=120:
         return "Right"
-    if -120<=angle<=-10:
+    if -120<=angle<=-5:
         return "Left"
-    if -10<=angle<=10:
+    if -5<=angle<=5:
         return "Neutral"
-
 
 def smooth_angle(angle):
     global smoothed_angle
@@ -63,23 +63,19 @@ def steer(angle):
     elif angle > 120:
         res_angle = 120
 
-    
     # print("Original angle",angle)
     nav = orientation(res_angle)
     print("Steering angle", res_angle)
     
     if nav == "Left":
-        ReleaseKey(D)
-        SensitivePressKey(A, res_angle)
+        move_left_stick(res_angle)
         print("Vehicle steer:",nav)    
     elif nav == "Right":
-        ReleaseKey(A)
-        SensitivePressKey(D, res_angle)
+        move_left_stick(res_angle)
         print("Vehicle steer:",nav)
 
     elif nav == "Neutral":
-        ReleaseKey(A)
-        ReleaseKey(D)
+        move_left_stick(0)
         print("Vehicle steer:",nav)
 
 
@@ -105,18 +101,15 @@ def brake(ld1, ld2, distance):
 
 def speed_control(rpm, rev):
     if rpm == "Forward":
-        ReleaseKey(S)
-        PressKey(W)
+        accelerate()
         print("Vehicle is on", rpm)
         
     if rev == "Back":
-        ReleaseKey(W)
-        PressKey(S)
+        x_brake()
         print("Vehicle is on", rev)
 
     elif rpm == "Neutral":
-        ReleaseKey(S)
-        ReleaseKey(W)
+        neutral()
         print("Vehicle is on", rpm)
 
     
