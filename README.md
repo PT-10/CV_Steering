@@ -72,6 +72,6 @@ Acceleration and brake actions are analogous to pressing a button. To accelerate
 
 ### Future improvements:
 - [ ] Improve landmark detection confidence and reliability, better physics for steering
-- [ ] Map to controller analog stick instead of keyboard keys
+- [X] Map to controller analog stick instead of keyboard keys
 - [ ] Replace brake with nitro and implement aircraft lever method for brake
 - [ ] Use mediapipe gestures instead of handlandmarks
